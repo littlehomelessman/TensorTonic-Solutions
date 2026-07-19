@@ -4,9 +4,11 @@ def create_tensor(method, shape, value=0.0):
     """
     Returns: list
     """
-    if method == "zeros":
+    if method == 'zeros':
         return torch.zeros(shape).tolist()
-    elif method == "ones":
+    if method == 'ones':
         return torch.ones(shape).tolist()
-    else:
+    if method == 'full':
         return torch.full(shape, value).tolist()
+    
+    pass
