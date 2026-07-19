@@ -4,12 +4,11 @@ def reshape_tensor(x, op):
     """
     Returns: list
     """
-    x = torch.tensor(x, dtype=float)
-    if op == 'flatten':
-        return torch.flatten(x).tolist()
-    if op == 'squeeze':
-        return torch.squeeze(x).tolist()
-    if op == 'transpose':
+    x = torch.tensor(x, dtype=torch.float32)
+    if op == "flatten":
+        return x.flatten().tolist()
+    elif op == "squeeze":
+        return x.squeeze().tolist()
+    elif op == "transpose":
         return x.T.tolist()
-
-    return 
+    pass
