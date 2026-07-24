@@ -12,8 +12,6 @@ def pad_sequences(seqs, pad_value=0, max_len=None):
     res = np.full((len(seqs), max_len), pad_value)
     for i in range(len(seqs)):
         s = seqs[i]
-        r = np.full(max_len, pad_value)
-        r[:min(max_len, len(s))] = s[:min(max_len, len(s))]
-        res[i, :] = r
+        res[i, :min(max_len, len(s))] = s[:min(max_len, len(s))]
     return res
     pass
